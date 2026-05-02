@@ -78,6 +78,8 @@ JWT_SECRET=use-a-long-random-secret
 NODE_ENV=production
 ```
 
+Do not commit `server/.env` to GitHub. Add real credentials only in Railway's **Variables** tab.
+
 5. Deploy and generate a public Railway domain.
 6. Open the Railway domain and login with the seeded admin account after running the seed command locally or through Railway CLI.
 
