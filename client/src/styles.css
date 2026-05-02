@@ -1,0 +1,460 @@
+:root {
+  color: #17201f;
+  background: #f5f7f6;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+}
+
+.sidebar {
+  background: #102320;
+  color: #f6fbf8;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand strong {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.brand span,
+.topbar span,
+.muted {
+  color: #71817d;
+  font-size: 0.88rem;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 10px;
+}
+
+.sidebar button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  text-align: left;
+}
+
+.sidebar button.active,
+.sidebar button:hover {
+  background: #1d3b35;
+}
+
+.logout {
+  margin-top: auto;
+}
+
+main {
+  min-width: 0;
+}
+
+.topbar {
+  min-height: 96px;
+  padding: 22px 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #dde5e1;
+  background: #ffffff;
+}
+
+.topbar h1,
+.section-heading h2,
+.auth-copy h1 {
+  margin: 0;
+  letter-spacing: 0;
+}
+
+.role-pill,
+.small-button,
+.primary,
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+}
+
+.role-pill {
+  border: 1px solid #cfdad5;
+  padding: 9px 12px;
+  background: #f8faf9;
+}
+
+.page {
+  padding: 30px 34px 48px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.section-heading p {
+  margin: 5px 0 0;
+  color: #63736f;
+}
+
+.tight {
+  align-items: center;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.metric,
+.panel,
+.task-card,
+.auth-panel {
+  background: #ffffff;
+  border: 1px solid #dce5e1;
+  border-radius: 8px;
+}
+
+.metric {
+  min-height: 118px;
+  padding: 18px;
+  display: grid;
+  gap: 7px;
+}
+
+.metric strong {
+  font-size: 2rem;
+}
+
+.danger strong,
+.error {
+  color: #b83232;
+}
+
+.project-layout {
+  display: grid;
+  grid-template-columns: minmax(250px, 320px) 1fr;
+  gap: 24px;
+}
+
+.project-list {
+  min-width: 0;
+}
+
+.project-row {
+  width: 100%;
+  min-height: 76px;
+  border: 1px solid #dce5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 14px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.project-row strong,
+.project-row span {
+  display: block;
+}
+
+.project-row span {
+  margin-top: 6px;
+  color: #6b7975;
+}
+
+.project-row.active {
+  border-color: #27866f;
+  box-shadow: 0 0 0 3px #d8eee8;
+}
+
+.project-detail {
+  min-width: 0;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(320px, 1.5fr);
+  gap: 18px;
+}
+
+.panel {
+  padding: 18px;
+}
+
+.panel h3 {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 0 0 14px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chips span,
+.priority {
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: #eef5f2;
+  font-size: 0.86rem;
+}
+
+.task-list {
+  display: grid;
+  gap: 10px;
+}
+
+.task-card {
+  padding: 14px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 160px;
+  align-items: center;
+  gap: 14px;
+}
+
+.task-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.task-card p {
+  margin: 7px 0;
+  color: #4f5f5b;
+}
+
+.priority.high {
+  background: #ffe8e3;
+  color: #9a321d;
+}
+
+.priority.medium {
+  background: #fff2cb;
+  color: #7a5700;
+}
+
+.priority.low {
+  background: #e8f3ff;
+  color: #1d5c91;
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  background: linear-gradient(135deg, #102320 0%, #244c44 48%, #f4bf62 100%);
+}
+
+.auth-panel {
+  width: min(920px, 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+.auth-copy {
+  background: #102320;
+  color: #ffffff;
+  padding: 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-copy p {
+  color: #c5d6d1;
+  line-height: 1.6;
+}
+
+.auth-form,
+.task-form {
+  padding: 28px;
+  display: grid;
+  gap: 14px;
+}
+
+label {
+  display: grid;
+  gap: 7px;
+  color: #465551;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #cdd8d3;
+  border-radius: 8px;
+  min-height: 42px;
+  padding: 9px 11px;
+  background: #ffffff;
+  color: #17201f;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 78px;
+}
+
+.primary,
+.small-button,
+.icon-button {
+  border: 0;
+  background: #27866f;
+  color: #ffffff;
+  min-height: 42px;
+  padding: 0 14px;
+}
+
+.primary.compact {
+  min-width: 92px;
+}
+
+.small-button {
+  min-height: 38px;
+}
+
+.icon-button {
+  width: 42px;
+  padding: 0;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid #cdd8d3;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tabs button {
+  border: 0;
+  background: #ffffff;
+  min-height: 42px;
+}
+
+.tabs button.active {
+  background: #102320;
+  color: #ffffff;
+}
+
+.inline-form {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 140px 150px;
+  gap: 10px;
+}
+
+.state {
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  color: #61706c;
+}
+
+.error-box {
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .app-shell,
+  .project-layout,
+  .split,
+  .auth-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    padding: 16px;
+  }
+
+  .sidebar nav {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .task-card,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page,
+  .topbar {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+@media (max-width: 560px) {
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading,
+  .topbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .auth-copy,
+  .auth-form {
+    padding: 24px;
+  }
+}
