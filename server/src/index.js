@@ -7,6 +7,7 @@ import router from './routes.js';
 
 const app = express();
 const port = Number(process.env.PORT || 4000);
+const host = '0.0.0.0';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const clientDistPath = path.resolve(__dirname, '../../client/dist');
 
@@ -36,8 +37,8 @@ app.use((err, _req, res, _next) => {
 
 connectDb()
   .then(() => {
-    app.listen(port, () => {
-      console.log(`API listening on http://localhost:${port}`);
+    app.listen(port, host, () => {
+      console.log(`API listening on http://${host}:${port}`);
     });
   })
   .catch((error) => {
