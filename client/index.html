@@ -6,7 +6,22 @@
     <title>Team Task Manager</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="boot-screen">
+        <h1>Team Task Manager</h1>
+        <p>Loading application...</p>
+      </div>
+    </div>
+    <script>
+      window.addEventListener('error', function (event) {
+        var root = document.getElementById('root');
+        if (!root || root.dataset.reactReady === 'true') return;
+        root.innerHTML =
+          '<div class="boot-screen"><h1>Team Task Manager</h1><p>Unable to load the app. Please refresh once.</p><pre>' +
+          String(event.message || 'Unknown error') +
+          '</pre></div>';
+      });
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

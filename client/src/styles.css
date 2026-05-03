@@ -12,6 +12,28 @@ body {
   margin: 0;
 }
 
+.boot-screen {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 10px;
+  padding: 24px;
+  background: #102320;
+  color: #ffffff;
+  text-align: center;
+}
+
+.boot-screen h1,
+.boot-screen p {
+  margin: 0;
+}
+
+.boot-screen pre {
+  max-width: min(680px, 90vw);
+  white-space: pre-wrap;
+  color: #ffd8d8;
+}
+
 button,
 input,
 select,

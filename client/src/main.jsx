@@ -422,4 +422,6 @@ async function api(path, { token, method = 'GET', body } = {}) {
   return response.json();
 }
 
-createRoot(document.getElementById('root')).render(<App />);
+const rootElement = document.getElementById('root');
+rootElement.dataset.reactReady = 'true';
+createRoot(rootElement).render(<App />);
