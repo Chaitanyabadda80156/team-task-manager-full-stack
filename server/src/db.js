@@ -8,7 +8,9 @@ dotenv.config();
 const mongoUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/team-task-manager';
 
 export async function connectDb() {
-  await mongoose.connect(mongoUri);
+  await mongoose.connect(mongoUri, {
+    serverSelectionTimeoutMS: 15000
+  });
   console.log('MongoDB connected');
 }
 

@@ -1,5 +1,6 @@
 import cors from 'cors';
 import express from 'express';
+import mongoose from 'mongoose';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { connectDb } from './db.js';
@@ -22,6 +23,12 @@ app.use(
   })
 );
 app.use(express.json());
+app.get('/api/health', (_req, res) => {
+  res.json({
+    ok: true,
+    database: mongoose.connection.readyState === 1 ? 'connected' : 'connecting'
+  });
+});
 app.use('/api', router);
 app.use(express.static(clientDistPath));
 
@@ -35,13 +42,10 @@ app.use((err, _req, res, _next) => {
   res.status(500).json({ message: 'Something went wrong.' });
 });
 
-connectDb()
-  .then(() => {
-    app.listen(port, host, () => {
-      console.log(`API listening on http://${host}:${port}`);
-    });
-  })
-  .catch((error) => {
-    console.error('Failed to connect to MongoDB:', error.message);
-    process.exit(1);
-  });
+app.listen(port, host, () => {
+  console.log(`API listening on http://${host}:${port}`);
+});
+
+connectDb().catch((error) => {
+  console.error('Failed to connect to MongoDB:', error.message);
+});

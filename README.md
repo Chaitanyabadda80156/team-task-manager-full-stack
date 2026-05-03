@@ -80,6 +80,12 @@ NODE_ENV=production
 
 Do not commit `server/.env` to GitHub. Add real credentials only in Railway's **Variables** tab.
 
+If Railway gets stuck on **Network > Healthcheck**, confirm:
+
+- `MONGODB_URI`, `JWT_SECRET`, and `NODE_ENV` are set in Railway variables.
+- MongoDB Atlas **Network Access** allows Railway, commonly `0.0.0.0/0` for assignment demos.
+- The service has a generated public domain after deployment succeeds.
+
 5. Deploy and generate a public Railway domain.
 6. Open the Railway domain and login with the seeded admin account after running the seed command locally or through Railway CLI.
 
